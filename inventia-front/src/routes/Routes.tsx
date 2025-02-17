@@ -5,7 +5,7 @@ import Home from '../views/home';
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/login" component={Login} />
+            <Route path="/" component={Login} />
             <Route path="/home" component={Home} />
         </Switch>
     );

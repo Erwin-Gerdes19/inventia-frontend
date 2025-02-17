@@ -2,3 +2,7 @@
 
 /* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
 @import 'primereact/resources/themes/lara-light-indigo/theme.css' layer(primereact);
+
+.fondo-inventia {
+    background-image: url('/public/Fondo-img-inventia.jpg');
+}
