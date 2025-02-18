@@ -1,4 +1,4 @@
-// src/views/Home.tsx
+// src/views/home.tsx
 import React from 'react';
 
 export default function Home(): JSX.Element {
