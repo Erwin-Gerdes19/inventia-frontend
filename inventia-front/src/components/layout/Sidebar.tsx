@@ -1,20 +1,22 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, BellIcon } from '@heroicons/react/24/outline';
 import React from 'react';
+import { useLocation } from 'wouter';
 
 // Definir el tipo para los elementos de navegación
 interface NavigationItem {
   name: string;
-  href: string;
-  current: boolean;
+  href: string
 }
 
 const navigation: NavigationItem[] = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Reportes', href: '#', current: false },
-  { name: 'Escaneo', href: '#', current: false },
-  { name: 'Listado de Productos', href: '#', current: false },
-  { name: 'Vencimiento cercanos', href: '#', current: false },
+  { name: 'Home', href: '/home'},
+  { name: 'Dashboard', href: '#'},
+  { name: 'Reportes', href: '#'},
+  { name: 'Escaneo', href: '#'},
+  { name: 'Listado de Productos', href: '/listado-productos'},
+  { name: 'Vencimiento cercanos', href: '#'},
+  { name: 'Imagen del Producto', href: '/imagen-producto'}
 ];
 
 // Función para combinar clases condicionales
@@ -23,6 +25,9 @@ function classNames(...classes: (string | boolean)[]): string {
 }
 
 export default function Sidebar(): JSX.Element {
+    const [location] = useLocation(); // Obtener la ubicación actual
+
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -33,7 +38,7 @@ export default function Sidebar(): JSX.Element {
             <div className="flex items-center">
               <img
                 alt="Your Company"
-                src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                src="../../public/logo-inventario.png"
                 className="h-8 w-auto"
               />
             </div>
@@ -52,7 +57,7 @@ export default function Sidebar(): JSX.Element {
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                  location ===item.href ? 'bg-gray-300 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                   'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                 )}
               >
