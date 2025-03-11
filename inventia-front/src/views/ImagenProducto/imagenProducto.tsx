@@ -8,7 +8,6 @@ export default function ImagenProducto(): JSX.Element {
         <p className="mb-4">
           Aquí puedes subir la imagen del producto que deseas agregar.
         </p>
-
         <SubirImagen />
       </div>
     );

@@ -6,8 +6,8 @@ import ImagenProducto from '../views/ImagenProducto/imagenProducto';
 import withLayout from '../components/layout/withLayout'; // Importa el HOC
 
 const HomeWithLayout = withLayout(Home); // Aplica el HOC a la vista Home
-const ListadoProductosWithLayout = withLayout(ListadoProductos); // Aplica el HOC a la vista Home
-const ImagenProductoWithLayout = withLayout(ImagenProducto); // Aplica el HOC a la vista Home
+const ListadoProductosWithLayout = withLayout(ListadoProductos);
+const ImagenProductoWithLayout = withLayout(ImagenProducto); 
 
 export default function Routes() {
     return (
